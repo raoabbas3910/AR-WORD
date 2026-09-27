@@ -1,0 +1,6 @@
+{
+  "name": "Word Desktop - Professional Document Processor",
+  "description": "Full-featured desktop Word processor with ribbon navigation, real-time team collaboration, offline auto-save, PDF/DOCX/Markdown export, customizable shortcuts, and Gemini AI writing assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

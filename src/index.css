@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --word-blue: #185abd;
+    --word-blue-hover: #114999;
+    --word-blue-light: #e8f0fe;
+    --word-ribbon-bg: #f3f4f6;
+    --word-page-bg: #f8fafc;
+  }
+}
+
+/* Custom scrollbars like desktop Word */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Document Page Canvas */
+.word-page {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1), 0 2px 6px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Print CSS for clean, high-resolution vector PDF export */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    overflow: visible !important;
+  }
+  .no-print,
+  nav,
+  header,
+  footer,
+  aside,
+  .ribbon-container,
+  .status-bar,
+  .ruler-bar,
+  .collaborator-presence-overlay,
+  .ai-assistant-drawer {
+    display: none !important;
+  }
+  .word-page {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .print-area {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 2cm !important;
+  }
+}
+
+/* Content Editable typography resets and enhancements */
+.document-content h1 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #1e293b;
+}
+.dark .document-content.dark-canvas h1 {
+  color: #f1f5f9;
+}
+
+.document-content h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #334155;
+}
+.dark .document-content.dark-canvas h2 {
+  color: #e2e8f0;
+}
+
+.document-content h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+  color: #475569;
+}
+.dark .document-content.dark-canvas h3 {
+  color: #cbd5e1;
+}
+
+.document-content p {
+  margin-bottom: 0.85rem;
+  line-height: 1.65;
+}
+
+.document-content blockquote {
+  border-left: 4px solid #3b82f6;
+  padding-left: 1rem;
+  font-style: italic;
+  margin: 1rem 0;
+  color: #475569;
+}
+.dark .document-content.dark-canvas blockquote {
+  color: #94a3b8;
+  border-color: #60a5fa;
+}
+
+.document-content ul {
+  list-style-type: disc;
+  padding-left: 1.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.document-content ol {
+  list-style-type: decimal;
+  padding-left: 1.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.document-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.document-content th,
+.document-content td {
+  border: 1px solid #cbd5e1;
+  padding: 8px 12px;
+}
+
+.dark .document-content.dark-canvas th,
+.dark .document-content.dark-canvas td {
+  border-color: #475569;
+}
+
+.document-content pre,
+.document-content code {
+  font-family: 'Fira Code', monospace;
+  background-color: #f1f5f9;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.875rem;
+}
+.dark .document-content.dark-canvas pre,
+.dark .document-content.dark-canvas code {
+  background-color: #1e293b;
+  color: #38bdf8;
+}
+
+/* Comment highlight decoration */
+.comment-highlight {
+  background-color: #fef08a;
+  border-bottom: 2px solid #eab308;
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 1px 2px;
+}
+.dark .comment-highlight {
+  background-color: rgba(234, 179, 8, 0.3);
+  border-color: #eab308;
+}
